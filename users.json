@@ -1,4 +1,1 @@
-[
-  { "username": "naveen", "email": "naveen@gmail.com", "password": "naveen" },
-  { "username": "sahil", "email": "sahil@gmail.com", "password": "sahil" }
-]
+[{"username":"naveen","email":"naveen@gmail.com","password":"naveen"},{"username":"sahil","email":"sahil@gmail.com","password":"sahil"},{"username":"Sagar","email":"sagar@gmail.com","password":"sagar"}]
