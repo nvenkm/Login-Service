@@ -109,7 +109,11 @@ app.post("/login", (req, res) => {
 });
 
 app.get("/signup", (req, res) => {
-  res.render("signup.ejs", { message: "" });
+  if (req.session.isLoggedIn === true) {
+    res.redirect("/");
+  } else {
+    res.render("signup.ejs", { message: "" });
+  }
 });
 
 app.post("/create_account", (req, res) => {

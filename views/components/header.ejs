@@ -1,40 +1,32 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>ToDo App</title>
-    <link rel="stylesheet" href="styles.css" />
-    <style>
-      /* Basic styles for the header */
-      .header {
-        background-color: #c1dcf3;
-        color: #fff;
-        padding: 10px;
-        margin: 10px 0;
-        text-align: center;
-      }
+<style>
+  /* Basic styles for the header */
+  .header {
+    background-color: #c1dcf3;
+    color: #fff;
+    padding: 10px;
+    margin: 10px 0;
+    text-align: center;
+  }
 
-      /* Style for the welcome message */
-      .header p {
-        color: #2a71b0;
-        margin: 0px;
-        background-color: #c1dcf3;
-        font-size: 18px;
-      }
+  /* Style for the welcome message */
+  .header p {
+    color: #2a71b0;
+    margin: 0px;
+    background-color: #c1dcf3;
+    font-size: 18px;
+  }
 
-      /* Style for the user name */
-      .header p span {
-        font-weight: bold;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="header">
-      <!-- Display the name of the current logged-in user if available -->
-      <% if (username) { %>
-      <p>Welcome, <span><%= username %></span>!</p>
-      <% } else { %>
-      <p>Welcome, Guest!</p>
-      <% } %>
-    </div>
-  </body>
-</html>
+  /* Style for the user name */
+  .header p span {
+    font-weight: bold;
+  }
+</style>
+
+<div class="header">
+  <!-- Display the name of the current logged-in user if available -->
+  <% if (username) { %>
+  <p>Welcome, <span><%= username %></span>!</p>
+  <% } else { %>
+  <p>Welcome, Guest!</p>
+  <% } %>
+</div>
