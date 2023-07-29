@@ -27,6 +27,7 @@
       .dashboard-content {
         flex: 1;
         padding: 20px;
+        padding-top: 0;
       }
 
       #greeting {
@@ -57,10 +58,8 @@
       <h2>Dashboard</h2>
     </div>
     <div class="dashboard-content">
-      <div id="greeting">
-        Welcome, [User's Name]
-        <!-- Replace [User's Name] with the actual username from your backend -->
-      </div>
+      <!-- <div id="greeting">Welcome <%= username %></div> -->
+      <%- include('components/header.ejs', username); %>
       <button class="logout-button" id="logout-button">Log Out</button>
     </div>
     <script src="../script.js"></script>

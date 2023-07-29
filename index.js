@@ -6,6 +6,7 @@ const { emit } = require("process");
 
 const app = express();
 
+app.set("view engine", "ejs");
 app.use(express.static(__dirname));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -74,7 +75,7 @@ app.get("/", (req, res) => {
     res.redirect("/login");
     return;
   }
-  res.sendFile(__dirname + "/login-service-views/dashboard.html");
+  res.render("dashboard.ejs", { username: req.session.username });
 });
 
 app.get("/login", (req, res) => {
@@ -82,11 +83,8 @@ app.get("/login", (req, res) => {
     res.redirect("/");
     return;
   }
-  res.sendFile(__dirname + "/login-service-views/login.html");
+  res.render("login.ejs");
 });
-// app.get("/dashboard", (req, res) => {
-//   res.sendFile(__dirname + "/login-service-views/dashboard.html");
-// });
 
 app.post("/login", (req, res) => {
   readUserData((err, users) => {
@@ -111,7 +109,7 @@ app.post("/login", (req, res) => {
 });
 
 app.get("/signup", (req, res) => {
-  res.sendFile(__dirname + "/login-service-views/signup.html");
+  res.render("signup.ejs", { message: "" });
 });
 
 app.post("/create_account", (req, res) => {
@@ -127,9 +125,13 @@ app.post("/create_account", (req, res) => {
       } else {
         for (let user of users) {
           if (user.email.toLowerCase() === req.body.email.toLowerCase()) {
-            res.send(
-              `<h1 >USER ALREADY EXISTS!</h1> <br> <hr> <br> <a href="/login">Click Here to Login</a>`
-            );
+            // res.send(
+            //   `<h1 >USER ALREADY EXISTS!</h1> <br> <hr> <br> <a href="/login">Click Here to Login</a>`
+            // );
+            let message = "User Already Exists! Go to Login Page";
+            res.render("signup", {
+              message,
+            });
             return;
           }
         }
@@ -139,7 +141,7 @@ app.post("/create_account", (req, res) => {
           req.body.email.toLowerCase(),
           req.body.password
         );
-        res.redirect("/login");
+        res.render("login");
       }
     } else {
       res.redirect("/signup");
@@ -152,13 +154,8 @@ app.delete("/logout", (req, res) => {
   // removeUser(req.session.email);
   res.sendStatus(200);
 });
-
-app.get("/getusername", (req, res) => {
-  res.json(JSON.stringify(req.session.username));
-});
-
 app.get("/invalid", (req, res) => {
-  res.sendFile(__dirname + "/login-service-views/invalid-credentials.html");
+  res.render("invalid-credentials.ejs");
 });
 
 app.listen(3000, () => {

@@ -98,6 +98,9 @@
           Create Account
         </button>
       </form>
+      <% if(message) { %>
+      <p><%= message %></p>
+      <% } %>
       <div class="login-link">
         <a href="/login">Already have an account? Login</a>
       </div>
