@@ -1,1 +1,17 @@
-[{"username":"naveen","email":"naveen@gmail.com","password":"naveen"},{"username":"sahil","email":"sahil@gmail.com","password":"sahil"},{"username":"Sagar","email":"sagar@gmail.com","password":"sagar"}]
+[
+  { "username": "naveen", "email": "naveen@gmail.com", "password": "naveen" },
+  { "username": "sahil", "email": "sahil@gmail.com", "password": "sahil" },
+  { "username": "Sagar", "email": "sagar@gmail.com", "password": "sagar" },
+  {
+    "username": "parveen",
+    "email": "parveen@gmail.com",
+    "password": "parveen"
+  },
+  {
+    "username": "Chiraag",
+    "email": "chiraag@gmail.com",
+    "password": "chiraag"
+  },
+  { "username": "Ajay", "email": "ajay@gmail.com", "password": "ajay" },
+  { "username": "rahul", "email": "rahul@gmail.com", "password": "rahul" }
+]
