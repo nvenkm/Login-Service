@@ -75,7 +75,10 @@ app.get("/", (req, res) => {
     res.redirect("/login");
     return;
   }
-  res.render("dashboard.ejs", { username: req.session.username });
+  res.render("dashboard.ejs", {
+    username: req.session.username,
+    email: req.session.email,
+  });
 });
 
 app.get("/login", (req, res) => {
