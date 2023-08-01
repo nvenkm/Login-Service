@@ -33,7 +33,7 @@ Run the Server
 # 
 
 #### A sample dashboard page
-![App Screenshot]([https://github.com/nvenkm/Login-Service/blob/master/Screenshtos/dashboard.png?raw=true](https://github.com/nvenkm/Login-Service/blob/master/Screenshtos/dashboard2.png?raw=true))
+![App Screenshot]([https://github.com/nvenkm/Login-Service/blob/master/Screenshtos/dashboard.png?raw=true](https://github.com/nvenkm/Login-Service/blob/master/Screenshtos/dashboard2.png?raw=true)
 # 
 
 #### Invalid credentials Page
